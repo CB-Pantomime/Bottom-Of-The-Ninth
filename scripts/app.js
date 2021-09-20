@@ -1,6 +1,8 @@
 
 let hitsTotal = 0;
 let strikesTotal = 0;
+let foulsTotal = 0;
+let ballsTotal = 0;
 
 function addHits(){
     hitsTotal = hitsTotal + 1;
@@ -12,6 +14,17 @@ function addStrikes(){
     console.log(strikesTotal);
 }
 
+function addFouls(){
+    foulsTotal = foulsTotal + 1;
+    console.log(foulsTotal);
+} 
+
+function addBalls(){
+    ballsTotal = ballsTotal + 1;
+    console.log(ballsTotal);
+}
+
+
 
 // batter object hold key-value for currentSwing null to be evaluated throughout game play
 let batter = {
@@ -20,7 +33,7 @@ let batter = {
 
 
 // array for hit or strike values to be randomized throughout game play
-let swingArray = ["hit", "strike"];
+let swingArray = ["hit", "strike", "foul", "ball"];
 
 
 // function to run get random swing 
@@ -40,17 +53,30 @@ function gamePlay(){
         console.log("It's a hit!");
         console.log(hitsTotal);
 
-    }else{
+    }else if(batter.currentSwing ==="strike"){
         // strikesTotal = strikesTotal + 1; 
         addStrikes();
         console.log("Strike!");
         console.log(strikesTotal);
         
+    }else if(batter.currentSwing === "foul"){
+        addFouls();
+        console.log("Foul!");
+        console.log(foulsTotal);
+    }else if(batter.currentSwing === "ball"){
+        addBalls();
+        console.log("Ball!");
+        console.log(ballsTotal);
     }
 
 }
 
-gamePlay();
+// gamePlay();
+
+for(let i = 0; i < 10; i++){
+    gamePlay();
+};
+
 
 
 
