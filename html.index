@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!-- Google Fonts COMING SOON -->
+    
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="./styles/style.css">
+  
+  <!-- Our friend, JavaScript -->
+  <script src="app.js" defer></script>
+  <title>Bottom of the Ninth!</title>
+
+</head>
+
+<body>
+<script src="./scripts/app.js" defer></script>
+
+    <button id="" onclick="startGame()">Start Game</button>
+    
+    <button id="swingButton" onclick="gamePlay()"></button>
+
+
+    <p id="currentAction"></p>
+
+  
+
+</body>
+</html>
