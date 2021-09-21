@@ -1,30 +1,11 @@
 // all those variables ... 
-let hitsTotal = 3;
-let strikesTotal = 8;
-let foulsTotal = 2;
-let ballsTotal = 3;
+let hitsTotal = 0;
+let strikesTotal = 0;
+let foulsTotal = 0;
+let ballsTotal = 0;
 
 
-// TESTED OK
-function addHits(){
-    hitsTotal = hitsTotal + 1;
-    // console.log("hits total: ", hitsTotal);
-}
-// TESTED OK
-function addStrikes(){
-    strikesTotal = strikesTotal + 1;
-    console.log("strikes total: ", strikesTotal);
-}
 
-function addFouls(){
-    foulsTotal = foulsTotal + 1;
-    // console.log("fouls total: ", foulsTotal);
-} 
-// TESTED OK
-function addBalls(){
-    ballsTotal = ballsTotal + 1;
-    // console.log("balls total: ", ballsTotal);
-}
 // TESTED OK
 function endOfGameParade(){
     console.log("~STADIUM GOES BERSERK HOORAY LOL~");
@@ -57,69 +38,65 @@ function gamePlay(){
     if(batter.currentSwing === "hit"){
 
                     // TESTED OK
-            addHits();
+            hitsTotal = hitsTotal + 1; 
             if(hitsTotal === 4){           
                 console.log("Batting team wins");
                 console.log("hits total: ", hitsTotal);
                 return endOfGameParade();
             }else{            
-            console.log("It's a hit!");
-            console.log("hits total: ", hitsTotal);
+                console.log("It's a hit!", "hits total: ", hitsTotal);            
             }
 
 
     }else if(batter.currentSwing ==="strike"){
          
                     // TESTED OK
-            addStrikes();
+            strikesTotal = strikesTotal + 1;
             if(strikesTotal === 9){
                 console.log("Pitching team wins!")
                 console.log("strikes total: ", strikesTotal);
                 return endOfGameParade();
             }else{
-            console.log("Strike!");
-            console.log("strikes total: ", strikesTotal);       
+            console.log("Strike!", "strikes total: ", strikesTotal);       
             }
         
         
     }else if(batter.currentSwing === "foul"){
 
-                    // // TESTED OK
-            addFouls();
+                    // TESTED OK
+            foulsTotal = foulsTotal + 1;
             if(foulsTotal <= 2){
-                addStrikes();
+                strikesTotal = strikesTotal + 1;
                 console.log("Foul! Another strike!");
-                console.log("fouls total: ", foulsTotal);
+                console.log("fouls total: ", foulsTotal, "strikes total: ", strikesTotal);
             }else{
-                console.log("WOW U KEEP FOULING OUT");
-                console.log("fouls total: ", foulsTotal);
+                console.log("WOW U KEEP FOULING OUT", "fouls total: ", foulsTotal);
             }
        
 
     }else if(batter.currentSwing === "ball"){
 
-                    // // TESTED OK
-        addBalls();
-        if(ballsTotal === 4){
-            addHits();
+                    // TESTED OK
+            ballsTotal = ballsTotal + 1;
+            if(ballsTotal === 4){
+            hitsTotal = hitsTotal + 1;
                 if(hitsTotal === 4){           
                     console.log("Batting team wins");
                     console.log("hits total: ", hitsTotal);
                     return endOfGameParade();
                 }else{
-                    console.log("Ball!");
-                    console.log("Ball total: ", ballsTotal);
+                console.log("Ball!", "Ball total: ", ballsTotal);
                 }
-        }else{
-        console.log("Ball!");
-        console.log("Ball total: ", ballsTotal);
-        }
+            }else{
+            console.log("Ball!");
+            console.log("Ball total: ", ballsTotal);
+            }
         
     }
     
 };
 
-
+// ONLY RUNS IT ONCE, BUDDY, UNLESS YR CALLING IT AGAIN W/ THAT FANCY SWING BUTTON!!!!!!
 gamePlay();
 
 
