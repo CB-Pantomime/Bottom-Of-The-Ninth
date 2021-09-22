@@ -1,29 +1,43 @@
 <!DOCTYPE html>
-<html>
-<head>
-
+<html lang="en">
+  <head>
   <!-- Google Fonts COMING SOON -->
     
-  <!-- Main CSS -->
   <link rel="stylesheet" href="./styles/style.css">
   
   <!-- Our friend, JavaScript -->
-  <script src="app.js" defer></script>
-  <title>Bottom of the Ninth!</title>
-
-</head>
-
-<body>
-<script src="./scripts/app.js" defer></script>
-
-    <button id="" onclick="startGame()">Start Game</button>
+ <script src="./scripts/app.js" defer></script>
     
-    <button id="swingButton" onclick="gamePlay()"></button>
-
-
-    <p id="currentAction"></p>
-
+    <title>CHANGE THE NAME OF THE GAME</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
   
+  
+  <body>
+    
+    <header><h1>Bottom of the 9th</h1></header>
+    
+    
+    <div>    
+      <section>
+        <h3>It's the bottom of the ninth inning. The game is tied. If the home team can score a run they get a home town parade. Unfortunately, they are up against the league's best meanest closer. R U DOWN?</h3>       
+       </section>  
+    </div>
+    
+      <div>
+        <button id="startButton" onclick="startGame()">Start Game</button>
+      </div>
 
-</body>
+      <div>
+        <p id="currentAction"></p>
+        
+      </div>
+    
+    <div>
+      <button id="swingButton" onclick="gamePlay()"></button>
+    </div>
+    
+    
+    
+  </body>
 </html>
