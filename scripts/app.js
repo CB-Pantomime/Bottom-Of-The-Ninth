@@ -51,8 +51,8 @@ function showPitch(){
 }
 // To group wind up and pitch to be called in conditionals as relevant w/ increased timeout 
 function windAndPitchScript(){
-  setTimeout(showWindUp, 5000), 
-  setTimeout(showPitch, 7200)
+  setTimeout(showWindUp, 4000), 
+  setTimeout(showPitch, 6200)
 
 }
 
@@ -85,99 +85,90 @@ function turnOffSwing(){
 // CLICK SWING RUNS GAMEPLAY 
 function gamePlay(){
 
+    // Get random swing 
     getSwing();
 
+    // Nested comparison statements to evaluate current game result
     if(batter.currentSwing === "hit"){
 
                     // TESTED OK                                              
             hitsTotal = hitsTotal + 1; 
-            if(hitsTotal === 4){           
-                // setTimeout(currentAction(`Batting team wins!`), 3000);
-                // console.log("Batting team wins");
-                // console.log("hits total: ", hitsTotal);  
-                endOfGameParade(`A run is batted in! Batting team wins! GAME OVER THX 4 PLAYING`);            
+            if(hitsTotal === 4){    
+                // To display end of game result
+                endOfGameParade(`That's four hits to score the winning run! The 🌃 goes 🐻 over today's 🏆! Home team wins! U R 👍 🎆 4 🐭 them to ⭐-dom!`);            
                 turnOffSwing();
             }else{ 
-           
             // To display current game result AND new batter up 
-            setTimeout( currentAction(`It's a hit! Hits total: ${hitsTotal} Batter now on base and a new batter is up!`), 3000);
+            setTimeout( currentAction(`It's a hit! 👏 Batter now on base and a new batter is up!`), 3000);
             // To display another wind up / pitch 
-            windAndPitchScript();    
-               
-            // console.log("It's a hit!", "hits total: ", hitsTotal);
-                       
+            windAndPitchScript();                         
             }
 
 
-    }
-    else if(batter.currentSwing === "strike"){
+    }else if(batter.currentSwing === "strike"){
          
                     // TESTED OK
             strikesTotal = strikesTotal + 1;
             if(strikesTotal === 9){
-                // setTimeout(currentAction(`Pitching team wins!`), 3000);
-                // console.log("Pitching team wins!")
-                // console.log("strikes total: ", strikesTotal);
-                endOfGameParade(`Three strike outs! Pitching team wins! GAME OVER THX 4 PLAYING`);
-                // Remove swing button 
+                // To display end of game result
+                endOfGameParade(`Three strike outs! ⚡⚾⚡ Pitching team wins! ⚡🎱⚡ Game over, thx 4 playing!`);
+                // To remove swing button at end of game
                 turnOffSwing();
             }else if(strikesTotal === 3 || strikesTotal === 6){
-
-              // To display current game result AND new batter up 
-              setTimeout(currentAction(`You've struck out! Next batter is up.`), 3000);
+              // To display current game result and new batter up 
+              setTimeout(currentAction(`You've struck out!💩 ... Next batter is up!`), 3000);
               // To display another wind up / pitch
               windAndPitchScript();                  
             }else{
+            // To dislpay current game result
             setTimeout( currentAction(`Strike!`), 3000 );
+              // To dislpay another wind up / pitch
               windAndPitchScript();
             }
         
         
-    }
-    else if(batter.currentSwing === "foul"){
+    }else if(batter.currentSwing === "foul"){
 
                     // TESTED OK
             foulsTotal = foulsTotal + 1;
             if(foulsTotal <= 2){
                 strikesTotal = strikesTotal + 1;
                 // To display current game result 
-                setTimeout(currentAction(`Foul ball! Add strike. Fouls total: ${foulsTotal}. Strikes total: ${strikesTotal}`), 3000);
+                setTimeout(currentAction(`Foul ball! 🐔 Add strike.`), 3000);
                 // To display another wind up / pitch
                 windAndPitchScript();
             }else{
-              setTimeout( currentAction(`WOW U KEEP FOULING OUT lol. Fouls total: ${foulsTotal}`), 3000 );
+                // To display current game result
+                setTimeout( currentAction(`Wow! You keep chipping out these foul balls! 😂`, 3000 ) );
                 // To display another wind up / pitch
                 windAndPitchScript();
             }
        
 
-    }
-    else if(batter.currentSwing === "ball"){
+    }else if(batter.currentSwing === "ball"){
 
                     // TESTED OK
-        ballsTotal = ballsTotal + 1;
-        if(ballsTotal === 4 || ballsTotal === 8 || ballsTotal === 12){
+            ballsTotal = ballsTotal + 1;
+            if(ballsTotal === 4 || ballsTotal === 8 || ballsTotal === 12){
             hitsTotal = hitsTotal + 1;
 
                 if(hitsTotal === 4){
-                    // setTimeout( currentAction(`Batting team wins!`), 3000 );           
-                    // console.log("Batting team wins");
-                    // console.log("hits total: ", hitsTotal);
-                    // console.log("this ball thing on? ");
-                    endOfGameParade(`Walk pushes a run in! Batting team wins! GAME OVER THX 4 PLAYING`);
-                    // Remove swing button 
+                    // To display end of game result
+                    endOfGameParade(`Walk pushes a run in! The 🌃 goes 🐻 over today's 🏆! Home team wins! U R 👍 🎆 4 🐭 them to ⭐-dom!`);
+                    // Remove swing button at end of game
                     turnOffSwing();
                 }else{
-                    // To display current game result AND new batter up 
-                    setTimeout( currentAction(`Ball 4! Batter takes base. New batter up! Ball total: ${ballsTotal}`), 3000 );
+                    // To display current game result and new batter up 
+                    setTimeout( currentAction(`Ball 4! 🐌 Batter takes base. New batter up!`), 3000 );
                     // To display another wind up / pitch
                     windAndPitchScript();
                 }
-        }else{
-        setTimeout( currentAction(`Ball! Ball total: ${ballsTotal}`), 3000 );
-        // To display another wind up / pitch
-        windAndPitchScript();
-        }
+            }else{
+            // To display current game result
+            setTimeout( currentAction(`Ball!`), 3000 );
+            // To display another wind up / pitch
+            windAndPitchScript();
+            }
         
     }
     
