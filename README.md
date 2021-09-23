@@ -13,7 +13,7 @@ Milestones
 
 ## Scope
 Synopsis:
-It's the bottom of the ninth inning. The game is tied. If the home team can score a run they get a home town parade. Unfortunately, they are up against the league's best meanest closer.
+It's the bottom of the ninth inning. The game is tied. If the home team can score a run they get a home town parade. Unfortunately, they are up against the league's meanest closer.
 
 Origin:
 Bottom of the 9th originated as a table-top dice and card game for two players involving variable player strengths, bluffing/deduction, and die-rolling. This MVP version of the game is simplified to its core game mechanics and story line. 
