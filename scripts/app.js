@@ -4,6 +4,8 @@ let hitsTotal = 0;
 let strikesTotal = 0;
 let foulsTotal = 0;
 let ballsTotal = 0;
+
+// Do no delete - for future stretch
 // let buntOnBase = 0; 
 // let buntOut = 0;
 
@@ -26,12 +28,12 @@ function endOfGameParade(winString){
 // TESTED OK
 // batter object hold key-value for currentSwing null to be evaluated throughout game play
 let batter = {
-    currentSwing: null
+  currentSwing: null
 };
 
 // TESTED OK
-// array for pitch outcome values to be randomized throughout game play
-// One buntOnBase value in conditional to equal a hit/on base, One buntout value in conditional to equal an out. 
+// Array for pitch outcome values to be randomized throughout game play
+// One buntOnBase value in conditional to equal a hit/on base, One buntOut value in conditional to equal an out. 
 // Five sets of ~"hit", "strike", "foul", "ball"~ values in array to decrease opportunity for either bunt value. 
 let swingArray = ["hit", "strike", "foul", "ball", "hit", "strike", "buntOnBase", "foul", "ball", "hit", "strike", "foul", "ball", "hit", "strike", "foul", "ball", "buntOut", "hit", "strike", "foul", "ball"];
 
@@ -68,36 +70,11 @@ function currentAction(myString){
 function gameOver(){
   document.getElementById("currentAction").innerHTML = "GAME OVER THX 4 PLAYING"
 }
-
+// To turn off swing button at end of game play 
 function turnOffSwing(){
   let turnOffSwing = document.getElementById("swingButton");
   turnOffSwing.style.display = "none"; 
 }
-
-// ************ scratch do not delete 
-// array of 9 batters. use that array of batters to randomly select first batter. 
-// *while outs or less than three and score is tied*
-
-// conditional while true, increment the indice from array. 
-
-// let begin, middle, end; 
-
-// let battersArray = ["Sandra", "Amari", "Dannis", "Kevin"];
-// let currentBatter = ""; 
-
-// function getBatter(){
-
-//   let randomBatter = Math.floor( Math.random() * battersArray.length );
-//       currentBatter = randomBatter[battersArray];
-
-//   }
-
-// } 
-
-// for(let i = 0; i > battersArray.length; i++){
-
-// }
-// ************
 
 
 // TESTED OK
@@ -182,6 +159,7 @@ function gamePlay(){
                     // To display another wind up / pitch
                     windAndPitchScript();
                 }
+
             }else{
             // To display current game result
             setTimeout( currentAction(`Ball!`), 3000 );
@@ -225,3 +203,30 @@ function gamePlay(){
 };
 
 
+
+
+
+// ************ scratch do not delete - for future stretch 
+// array of 9 batters. use that array of batters to randomly select first batter. 
+// *while outs or less than three and score is tied*
+
+// conditional while true, increment the indice from array. 
+
+// let begin, middle, end; 
+
+// let battersArray = ["Sandra", "Amari", "Dannis", "Kevin"];
+// let currentBatter = ""; 
+
+// function getBatter(){
+
+//   let randomBatter = Math.floor( Math.random() * battersArray.length );
+//       currentBatter = randomBatter[battersArray];
+
+//   }
+
+// } 
+
+// for(let i = 0; i > battersArray.length; i++){
+
+// }
+// ************
