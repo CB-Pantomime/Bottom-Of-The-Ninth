@@ -26,7 +26,11 @@ The game I can first remember playing as a kid was an LCD handheld baseball game
 ## User Stories
 
 As the MVP version, it’s almost too simple. By clicking the ‘Start Game’ button the user will have revealed a div - p that displays the first ‘wind up’ and ‘pitch’, as well as the ‘Swing’ button. After the ‘Swing’ button is clicked during the pitch, the div - p will continue to display current game action/results. When the user reaches the end of the game, by either the ‘home team’ bringing in a run to score, or the ‘away team’ striking out three batters, a winner result and end of game message will display, and the ‘Swing’ button will be removed from view.
+
+
+
 ##Technologies
+
 My beautiful friend, JavaScript, and its cousins HTML and CSS.
 Also, special shout out to https://meowni.ca/emoji-translate/ for making it easy to generate sentences that auto-populate with emojis.
 
