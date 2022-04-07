@@ -5,9 +5,6 @@ let strikesTotal = 0;
 let foulsTotal = 0;
 let ballsTotal = 0;
 
-// Do no delete - for future stretch
-// let buntOnBase = 0; 
-// let buntOut = 0;
 
 // ***FUNCTIONS***
 // TESTED OK
@@ -201,6 +198,14 @@ function gamePlay(){
     }
     
 };
+
+
+
+
+
+
+
+
 
 
 
